@@ -1,0 +1,28 @@
+<!--user.wxml-->
+<view class="container">
+  <test>这里是user页面</test>
+  <!-- <block class='choose' wx:for="{{time}}" wx:key="id">
+    <button bindtap='open'>{{item}}</button>
+  </block>
+  <block class='choose' wx:for="{{thing}}" wx:key="id">
+    <view class="itemName" bindtap='close' wx:if="{{item.show}}">{{item.name}}</view>
+  </block> -->
+  <view class = "an">
+    <text class="te" bindtap="changeShishi">实时</text>
+    <text class="te" bindtap="changeShuju">数据</text>
+  </view>
+  <text>这里是实时数据</text>
+  <view wx:if="{{shiShow}}">
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        <view>{{region[0]}}-{{region[1]}}-{{region[2]}}</view>
+      </view>
+    </picker>
+  </view>
+  <view wx:if="{{shuShow}}">
+      <input placeholder="实时数据"  disabled="disabled" bindtap="select" bindinput="getInput"></input>
+      <block class='choose' wx:for="{{list}}" wx:key="id" wx:if="{{selShow}}">
+        <view class="itemName"  bindtap="choose"  data-text="{{item}}">{{item}}</view>
+      </block>
+  </view>
+</view>
